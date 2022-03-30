@@ -1,0 +1,409 @@
+/* 1.common style
+2.general style
+3.1 header section 
+3.2 slider section
+3.3 category-chair section
+3.4 paragraph-scale section
+3.5 delivery-differ-pic section
+3.6 footer section */
+/* common style....................................................................... */
+@media (max-width:768px){
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* general style.......................................................................... */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'PT Sans', sans-serif;
+    perspective: 600px;
+}
+a{
+    text-decoration: none;
+}
+.main_list{
+    list-style: none;
+}
+.main_list>li{
+    display: inline-block;
+}
+.content{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.contflex2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.section{
+    margin:50px auto;
+}
+.section .section_header{
+    text-align: center;
+    font-size: 35px;
+    color: #000000;
+    text-transform: capitalize;
+}
+.section .section_line{
+    display: block;
+    height: 3px;
+    width:80px;
+    background-color: brown;
+    margin: 10px auto;
+    transition:width 0.5s ease-in-out;
+}
+.section:hover .section_line{
+    width: 150px;
+    transition: 0.5s;
+}
+/* 3.1 header................................................................. */
+header{
+    padding: 40px 0px;
+}
+.contflex{
+   display: flex;
+   flex-direction: row; 
+   justify-content: center;
+}
+.img_header{
+flex-basis: 150px;
+height: 35px;
+} 
+ /*border..............................  */
+.a_parent_list{
+    margin: 10px 5px;
+    color: #7e5244;
+    font-size: 17px;
+    font-weight: bold;
+    position: relative;
+   padding: 10px 10px;
+   display: block;
+}
+.a_parent_list::before,
+.a_parent_list::after{
+    content:"";
+    position: absolute;
+    border-style: solid; 
+    left: 0;
+    top:0; 
+    transition: transform 0.2s;
+}
+.contflex nav ul li .a_parent_list:before{
+    border-width: 0 2px;
+    height: 100%; 
+    width: 95%;
+    transform: scale3d(1,0,1);
+}
+.contflex nav ul li .a_parent_list:hover:before{
+ transform: scale3d(1,1,1);
+}
+.contflex nav ul li .a_parent_list:after{
+border-width: 2px 0;
+height: 91%; 
+width: 98%;
+transform: scale3d(0,1,1);
+transform-origin: left;
+}
+.contflex nav ul li .a_parent_list:hover:after{
+ transform: scale3d(1,1,1);
+ transition-delay: .2s;
+}
+/* /border header........................................................... */
+/* dropdown header.......................................................... */
+.parent_list{
+    position: relative;
+}
+.container{
+    position: absolute;
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 5px;
+    color: #7e5244;
+    line-height: 25px;
+    padding: 10px 0px;
+    border: 1px solid #7e5244;
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+transform: scale(0); 
+}
+.a_list{
+    color: #7e5244;
+}
+  .parent_list:hover .container{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.5s;
+}
+.container .dropdown li:first-child a{
+    display: block;
+    border-bottom: 1px dotted #7e5244;
+    margin-bottom: 10px;
+}
+.dropdown{ 
+    list-style: none;
+    display: table-cell;
+    padding: 0px 20px;
+}
+/* /dropdown header....................... */
+.header_icon li i{
+   padding: 0px 10px;
+   font-size: 28px;
+}
+.header_icon .list_sp{
+    display: inline-block;
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+sub{
+    display: inline-block;
+    height: 25px;
+    width: 20px;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: #7e5244;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 3px;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*3.2 slider section................................................................................. */
+.content .pic{
+    width: 100%;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*3.3 category section......................................................................... */
+.category{
+    flex-basis: 24%;
+    margin: 5px;
+    position: relative;
+}
+.category .catimg{
+    width: 100%;
+    margin-bottom: 25px;
+}
+.category .arrow{
+    position: absolute;
+    line-height: 30px;
+    bottom: 0;
+    right: 0;
+font-size: 30px;
+width: 30px;
+height: 30px;
+color: white;
+text-align: center;
+background-color: brown;
+visibility: hidden;
+opacity: 0;
+transition: 1s, opacity 0.5s;
+}
+.category:hover .arrow{
+    visibility: visible;
+    opacity: 1;
+}
+.category h2{
+font-size: 19px;
+color:#000000 ;
+text-transform: capitalize;
+}
+.category h3{
+    font-size: 16px;
+    color: #81818c;
+    text-transform: capitalize;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/*3.4 paragraph section.................................................................... */
+.paragraph{
+    flex-basis: 50%;
+    background-color:#f7f3ef;
+    padding: 20px 0px;
+}
+.upper{
+    position: relative;
+    padding: 0px 20px;
+}
+.qot{
+    font-size: 40px;
+    color: brown;
+}
+.paragraph h2{
+    position: absolute;
+    text-transform: capitalize;
+    top: 0;
+    margin-left: 42px;
+}
+ .paragraph .spgaph{
+    display: block;
+    margin-left: 42px;
+    line-height: 0;
+} 
+.paragraph p{
+    line-height: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 30px 20px;
+}
+.discount{
+    flex-basis:23%;
+    text-transform: capitalize;
+    transition: 0.5s;
+    position: relative;
+}
+.discount:hover{
+    transform: scale(1.1);
+}
+.discount-info{
+    position: absolute;
+    top: 8%;
+    left:5%;
+}
+.discount h3{
+color:#7e5244;
+font-size: 17px;
+}
+.discount h2{
+    font-size: 19px;
+}
+.graphspan span{
+    height: 2px;
+    width: 60px;
+    background-color: #7e5244;
+    display: inline-block;
+    margin: 0px 5px;
+}
+.graphspan{
+    text-align: right;
+    margin-top: 20px;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*3.5 delivery section............................................................. */
+.contflex22{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* height: 55px; */
+    margin-bottom: 55px;
+}
+.delivery .delivery_info{
+    text-transform: capitalize;
+}
+.delivery .delivery_info span{
+    color: #81818c;
+}
+.delivery{
+    border-right: 1px solid #7e5244;
+    flex-basis: 20%;
+    /* margin: 5px; */
+    text-align: center;
+}
+.contflex22 .dd{
+    border-right: 0;
+}
+.delivery .delivery_img{
+    background-image: url(../pictures/service-icon.png);
+    height: 55px;
+    background-repeat: no-repeat;
+}
+.delivery .imgpo1{
+    background-position: center 5px;
+    transition: all 0.5s;
+}
+.delivery:hover .imgpo1{
+    background-position: center -86px;
+}
+.delivery .imgpo2{
+    background-position: center -180px;
+    transition: all 0.5s;
+}
+.delivery:hover .imgpo2{
+    background-position: center -273px;
+}
+.delivery .imgpo3{
+    background-position: center -366px;
+    transition: all 0.5s;
+}
+.delivery:hover .imgpo3{
+    background-position: center -455px;
+}
+.delivery .imgpo4{
+    background-position: center -549px;
+    transition: all 0.5s;
+}
+.delivery:hover .imgpo4{
+    background-position: center -639px;
+}
+.delivery .imgpo5{
+    background-position: center -734px;
+    transition: all 0.5s;
+}
+.delivery:hover .imgpo5{
+    background-position: center -826px;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* 3.6 footer section............................................................ */
+.main_list {
+text-align: center;
+}
+.main_list .ll{
+    padding: 10px 20px;
+}
+.contgrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    margin:30px 0;
+}
+.front{
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 98%;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0.9;
+    transition:transform 0.5s;
+    transform: scaleX(0);
+}
+.front:hover .overlay{
+    transform: scaleX(1);
+}
+.ss{
+    text-align: justify;
+    line-height: 30px;
+}
+.star{
+    color: yellow;
+}
+ .starh{
+     line-height: 30px;
+ }
+ .mm .media{
+     height: 40px;
+     width: 40px;
+     margin: auto 3px;
+     font-size:20px ;
+     background-color:#7e5244 ;
+     color: white;
+     line-height: 40px;
+ }
+ .mm{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     width: 80%;
+ }
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
